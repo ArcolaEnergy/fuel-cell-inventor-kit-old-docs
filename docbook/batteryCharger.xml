@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<!--
+todo
+  schematic 
+  publish code
+-->
+
+
+<article
+  xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  version="5.0">
+
+  <articleinfo>
+
+    <title>H2MDK 30W Example</title>
+    <subtitle>Lead acid battery charger</subtitle>
+  <publisher><publishername>Arcola Energy</publishername></publisher>
+  </articleinfo>
+
+
+<sect1 id="overview">
+<title>Project overview</title>
+
+<para>The aim of this project is to build a hydrogen powered lead acid battery charger. It is based on the <ulink url="http://www.arduino.cc">Arduino</ulink>, <ulink url="http://www.arcolaenergy.com/h2mdk">H2MDK fuel cell shield</ulink> and the <ulink url="http://uk.farnell.com/jsp/search/productdetail.jsp?SKU=1821394">XP Power 30W dc/dc converter</ulink>. We will use a P channel mosfet to regulate the current supplied by the fuel cell to a safe limit. The mosfet will be controlled by a PWM output of the Arduino.
+</para>
+
+</sect1>
+<sect1 id="what hardware you need">
+<title>Hardware requirements</title>
+
+<itemizedlist>
+<listitem>1 Arduino</listitem>
+<listitem>H2MDK 30W fuel cell inventor kit</listitem>
+<listitem>30W 15V output dc/dc converter that will accept input voltage as low as 9V, for example the <ulink url="http://uk.farnell.com/jsp/search/productdetail.jsp?SKU=1821394">XP Power 30W dc/dc converter</ulink></listitem>
+<listitem>Bread board</listitem>
+<listitem>Wires</listitem>
+<listitem>P channel mosfet that can handle 3A, for example FQP8P10</listitem>
+<listitem>NPN transistor, for example 2n3906</listitem>
+<listitem>resistors: 5k, 80k, 220k</listitem>
+<listitem>Up to a 7AH lead acid battery</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="what software you need">
+<title>Software requirements</title>
+
+<itemizedlist>
+  <listitem><ulink url="http://www.arduino.cc">Arduino IDE</ulink></listitem>
+  <listitem><ulink url="http://www.arcolaenergy.com/h2mdk">The H2MDK library</ulink></listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="software preparation">
+  <title>Software preparation</title>
+  <sect2 id="H2MDK library">
+    <title>H2MDK library</title>
+    <para>Make sure you've got the <ulink url="www.arcolaenergy.com/h2mdk">latest version of the H2MDK Arduino library</ulink> installed by downloading and unzipping into your sketchbook/libraries folder.
+    </para>
+    <para>
+    Start the Arduino IDE and have a look at the file->examples->H2MDK->batteryCharger sketch
+    </para>
+  </sect2>
+</sect1>
+
+
+<sect1 id="hardware preparation">
+    <title>Hardware preparation</title>
+    <sect2 id="battery charger">
+      <title>Building the circuit</title>
+      <para></para>
+      <para>
+       <figure>
+         <title>PWM battery charging circuit</title>
+         <mediaobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/batteryCharger/charger_bb.png"/></imageobject>
+         </mediaobject>
+        </figure>
+        Then load the examples->H2MDK->batteryCharger sketch and upload this onto the Arduino: 
+        <programlisting>
+        blah
+</programlisting>
+      </para>
+      <para>
+      Finally, connect your hydrogen. Check the serial monitor to see that the H2MDK shield is doing it's job:
+      <programlisting>
+</programlisting>
+      </para>
+    </sect2>
+</sect1>
+<sect1>
+  <title>Expansion ideas</title>
+  <itemizedlist>
+  <listitem>Add an LCD,</listitem>
+  <listitem>Combine with the remote sensor project to provide a warning when the battery is getting low,</listitem>
+  </itemizedlist>
+</sect1>
+<sect1>
+
+  <title>Resources</title>
+  <itemizedlist>
+  </itemizedlist>
+</sect1>
+
+</article>
