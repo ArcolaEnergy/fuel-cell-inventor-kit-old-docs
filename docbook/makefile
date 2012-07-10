@@ -3,7 +3,8 @@ XSLTOPTS=-v
 all: 3w 12-30w
 3w: 3w.html 3w.pdf
 12-30w: 12-30w.html 12-30w.pdf
-demo: remoteSense.html remoteSense.xml
+remote: remoteSense.html remoteSense.xml
+charger: batteryCharger.html batteryCharger.xml
 
 %.html: %.xml html.xsl
 	xsltproc $(XSLTOPTS) --xinclude  --output $@ html.xsl $<
