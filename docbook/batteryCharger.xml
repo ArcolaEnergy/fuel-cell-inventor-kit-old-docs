@@ -3,10 +3,9 @@
 
 <!--
 todo
-  schematic  - done
-  publish code - done
-  edit
-  add details about the knob
+  - update schematic with knob
+  - test
+  - update the arduino charging code
 -->
 
 
@@ -43,6 +42,7 @@ todo
 <listitem>NPN transistor, for example 2n3906</listitem>
 <listitem>resistors: 5k, 80k, 220k</listitem>
 <listitem>A 12V lead acid battery (capacity up to 7AH)</listitem>
+<listitem>A 10k or similar potentiometer</listitem>
 <listitem>A low ohmage power resistor (we used a 4ohm 25W)</listitem>
 </itemizedlist>
 
@@ -75,6 +75,8 @@ An example of a suitable DC/DC converter is the <ulink url="http://uk.farnell.co
 </para>
 <para>A solution to this is to control the charging current with a PWM controlled mosfet. If the charging current is too high we can limit it by cutting back on the PWM amount. We can monitor total current drawn with the H2MDK's on board current monitor, and we can monitor voltage with a simple potential divider.
 </para>
+<para>To discover the correct PWM amount, we measure the current while adjusting the PWM with a potentiometer.
+</para>
 </sect1>
 <sect1 id="what software you need">
 <title>Software requirements</title>
@@ -103,7 +105,7 @@ An example of a suitable DC/DC converter is the <ulink url="http://uk.farnell.co
     <sect2 id="battery charger">
       <title>Building the circuit</title>
       <para>
-      Build the circuit as shown in the diagram below. The 9v battery represents the 12V lead acid battery. Connect the input of the DC/DC converter to the output of the H2MDK shield.
+      Build the circuit as shown in the diagram below. The 9v battery represents the 12V lead acid battery. For now, don't connect the battery. Connect the input of the DC/DC converter to the output of the H2MDK shield.
        <figure>
          <title>PWM battery charging circuit</title>
          <mediaobject>
@@ -139,90 +141,49 @@ charge PWM: 0
 8.61V, 0.05A
 charge PWM: 0
 </programlisting>
-If the charge PWM isn't 0 then adjust the charge knob until it shows 0. Connect the power resistor instead of the battery. We're going to calibrate the PWM charge rate using the resistor as this allows us to simulate a discharged battery. Connect the hydrogen (or use a bench PSU set to 10V current limit 2A). Slowly adjust the charge knob and as the PWM value increases you should see the current drawn from the fuel cell/PSU increase:
+If the charge PWM isn't 0 then adjust the charge knob until it shows 0. Connect the power resistor where the battery will go. We're going to calibrate the PWM charge rate using the resistor as this allows us to simulate a discharged battery. Connect the hydrogen (or use a bench PSU set to 10V current limit 2A). Slowly adjust the charge knob and as the PWM value increases you should see the current drawn from the fuel cell/PSU increase:
 <programlisting>
 10.55V, 0.01A
 charge PWM: 0
-10.60V, 0.01A
-charge PWM: 0
-10.61V, 0.02A
 10.57V, 0.02A
 charge PWM: 1
-10.57V, 0.03A
-charge PWM: 2
-10.58V, 0.18A
-charge PWM: 0
 10.69V, 0.17A
-10.55V, 0.15A
-charge PWM: 0
-10.60V, 0.14A
-charge PWM: 8
 10.58V, 0.51A
 charge PWM: 17
-10.58V, 0.47A
-10.60V, 0.57A
-charge PWM: 21
 10.49V, 0.70A
 charge PWM: 28
 10.55V, 0.80A
-10.55V, 0.76A
 charge PWM: 34
-10.52V, 0.73A
-charge PWM: 44
 10.54V, 1.09A
 charge PWM: 47
-10.55V, 1.14A
 10.51V, 1.06A
-charge PWM: 47
-SHORT-CIRCUIT
-PURGE
-10.54V, 1.00A
 charge PWM: 47
 10.12V, 0.82A
 charge PWM: 47
-10.34V, 0.79A
-charge PWM: 46
-10.46V, 0.75A
 10.46V, 0.93A
-charge PWM: 47
-10.55V, 1.16A
 charge PWM: 47
 10.55V, 1.09A
 charge PWM: 51
-10.51V, 1.13A
 10.57V, 1.07A
 charge PWM: 57
 10.51V, 1.26A
 charge PWM: 65
 10.46V, 1.15A
-charge PWM: 72
-10.52V, 1.07A
-10.48V, 1.01A
 charge PWM: 79
 10.52V, 1.29A
 charge PWM: 85
 10.55V, 1.17A
-charge PWM: 95
-10.46V, 1.08A
-10.49V, 1.04A
 charge PWM: 107
 10.43V, 1.15A
 charge PWM: 115
 10.42V, 1.08A
-10.43V, 1.01A
-charge PWM: 116
-SHORT-CIRCUIT
-PURGE
-10.40V, 1.06A
 charge PWM: 116
 10.06V, 1.18A
 charge PWM: 116
-10.25V, 1.11A
 10.37V, 1.04A
 charge PWM: 116
 10.39V, 0.94A
 charge PWM: 116
-10.37V, 1.18A
 10.44V, 1.11A
 charge PWM: 123
 10.42V, 1.03A
@@ -230,13 +191,11 @@ charge PWM: 140
 10.43V, 0.97A
 charge PWM: 152
 10.39V, 1.12A
-10.36V, 1.06A
 charge PWM: 159
 10.45V, 1.00A
 charge PWM: 169
 10.39V, 0.95A
 charge PWM: 172
-9.65V, 1.23A
 9.60V, 1.18A
 charge PWM: 173
 9.40V, 1.20A
@@ -244,7 +203,6 @@ charge PWM: 172
 9.34V, 1.29A
 charge PWM: 172
 9.18V, 1.53A
-9.36V, 1.41A
 </programlisting>
 We've increased the PWM value to 172 to set a charge rate of about 1.5A. You can set the charge rate to anything you want, but ensure you're not running more than 3A for the 30W or 1.5A for the 15W. Find this line in the program:
 
@@ -284,7 +242,7 @@ long maxChargeTime = 600000; //10 minutes expressed in ms
         <listitem><varname>maxChargeTime</varname> is the time (expressed in ms) when we give up charging the battery.</listitem>
       </itemizedlist>
       </para>
-      <para>Now disconnect the load resistor and insert the battery. We recommend using a 3A quick blow fuse in series with the positive terminal. An ammeter is also handy to have an extra monitor of the charge current. Recompile and load the program onto the Arduino, and you should see this in the serial monitor:
+      <para>Now disconnect the load resistor and insert the battery. We recommend using a 3A quick blow fuse in series with the positive terminal. Recompile and load the program onto the Arduino, and you should see this in the serial monitor:
       <programlisting>
 charging
 battery voltage: 10464.90
