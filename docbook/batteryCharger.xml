@@ -105,7 +105,7 @@ An example of a suitable DC/DC converter is the <ulink url="http://uk.farnell.co
     <sect2 id="battery charger">
       <title>Building the circuit</title>
       <para>
-      Build the circuit as shown in the diagram below. The 9v battery represents the 12V lead acid battery. For now, don't connect the battery. Connect the input of the DC/DC converter to the output of the H2MDK shield.
+      Build the circuit as shown in the diagram below except for now, don't connect the battery. 
        <figure>
          <title>PWM battery charging circuit</title>
          <mediaobject>
