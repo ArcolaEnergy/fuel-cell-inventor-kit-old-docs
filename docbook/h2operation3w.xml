@@ -1,10 +1,6 @@
 <sect1 id="operation">
 <title>Operation</title>
 
-<sect2 id="jumper">
-<title>Jumper - Standalone use</title>
-<para>The system can be used without being connected to the USB port of your computer. Simply connect the components as outlined above and open the hydrogen supply. Ensure the Jumper is fitted to allow the Arduino to be powered by the stack. The jumper connects the super capacitors to the Arduino, ensuring it has power when the stack is short circuited. </para>
-</sect2>
 <sect2>
 <title>Status LEDS</title>
 <para>There are 3 LEDS:</para>
