@@ -154,7 +154,7 @@ stack V: 1.44
 stack I: 0.51
 sent
 </programlisting>
-      Then unplug the USB cable. The status light of the H2MDK shield should be flashing on and off every second, and the sent LED should flash every 5 seconds as data is sent. If all the lights go out when you unplug the USB cable, check the hydrogen is connected properly and that the 2 pin header on the H2MDK board is shorted with a jumper.
+      Then unplug the USB cable. The status light of the H2MDK shield should be flashing on and off every second, and the sent LED should flash every 5 seconds as data is sent. If all the lights go out when you unplug the USB cable, check the hydrogen is connected properly.
        <figure>
          <title>Sender</title>
          <mediaobject>
