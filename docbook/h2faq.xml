@@ -1,0 +1,12 @@
+<sect1 id="faq">
+<title>FAQ</title>
+<orderedlist>
+    <listitem>I get less power than I expect, why? Things to check include:
+        <itemizedlist>
+            <listitem>getting enough hydrogen, perhaps you need an extra hydrostik</listitem>
+            <listitem>the fuelcell may not be getting enough oxygen, check the vents are clear</listitem>
+            <listitem>remember the Arduino will draw about 0.25W, so for the lower power systems this can be a sizable percentage of available output power</listitem>
+        </itemizedlist>
+    </listitem>
+</orderedlist>
+</sect1>
