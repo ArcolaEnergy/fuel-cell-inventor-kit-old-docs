@@ -1,0 +1,28 @@
+<sect1 id="shieldpins">
+<title>Shield Pins</title>
+
+<para>You should avoid using these pins in your application</para>
+<sect2>
+<title>Hardware V1.1</title>
+
+<table frame='all'><title>Hardware V1.1 pin allocation</title>
+<tgroup cols='2' align='left' colsep='1' rowsep='1'>
+<colspec colname='1'/>
+<colspec colname='2'/>
+<thead>
+<row>
+  <entry>Pin</entry>
+  <entry>Function</entry>
+</row>
+</thead>
+<tbody>
+<row>
+  <entry>1</entry>
+  <entry>blah</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+</sect2>
+</sect1>
