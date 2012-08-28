@@ -66,7 +66,8 @@ An example of a suitable DC/DC converter is the <ulink url="http://uk.farnell.co
        <figure>
          <title>30W IV curve</title>
          <mediaobject>
-           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/12-30w/30Wivcurve.jpg"/> </imageobject>
+           <imageobject role="fo"><imagedata scalefit="1" width="100%" fileref="pics/fo/12-30w/30Wivcurve.jpg"/> </imageobject>
+           <imageobject role="html"><imagedata scalefit="1" width="100%" fileref="pics/html/12-30w/30Wivcurve.jpg"/> </imageobject>
          </mediaobject>
        </figure>
 </para>
@@ -109,7 +110,8 @@ An example of a suitable DC/DC converter is the <ulink url="http://uk.farnell.co
        <figure>
          <title>PWM battery charging circuit</title>
          <mediaobject>
-           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/batteryCharger/charger_bb.png"/></imageobject>
+           <imageobject role="fo"><imagedata scalefit="1" width="100%" fileref="pics/fo/batteryCharger/charger_bb.png"/></imageobject>
+           <imageobject role="html"><imagedata scalefit="1" width="100%" fileref="pics/html/batteryCharger/charger_bb.png"/></imageobject>
          </mediaobject>
         </figure>
       </para>

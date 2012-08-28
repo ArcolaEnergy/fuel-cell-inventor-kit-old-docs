@@ -91,7 +91,8 @@ todo
        <figure>
          <title>RFM12 connections</title>
          <mediaobject>
-           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/remoteSense/rfm12connections.jpg"/></imageobject>
+           <imageobject role="fo"><imagedata scalefit="1" width="100%" fileref="pics/fo/remoteSense/rfm12connections.jpg"/></imageobject>
+           <imageobject role="html"><imagedata scalefit="1" width="100%" fileref="pics/html/remoteSense/rfm12connections.jpg"/></imageobject>
          </mediaobject>
        </figure>
       </para>
@@ -113,7 +114,8 @@ todo
        <figure>
          <title>RF12demo</title>
          <mediaobject>
-           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/remoteSense/rfm12demo.png"/></imageobject>
+           <imageobject role="fo"><imagedata scalefit="1" width="100%" fileref="pics/fo/remoteSense/rfm12demo.png"/></imageobject>
+           <imageobject role="html"><imagedata scalefit="1" width="100%" fileref="pics/html/remoteSense/rfm12demo.png"/></imageobject>
          </mediaobject>
        </figure>
       </para>
@@ -129,7 +131,8 @@ todo
        <figure>
          <title>LED and Temperature sensor</title>
          <mediaobject>
-           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/remoteSense/receiver_bb.png"/></imageobject>
+           <imageobject role="fo"><imagedata scalefit="1" width="100%" fileref="pics/fo/remoteSense/receiver_bb.png"/></imageobject>
+           <imageobject role="html"><imagedata scalefit="1" width="100%" fileref="pics/html/remoteSense/receiver_bb.png"/></imageobject>
          </mediaobject>
         </figure>
         Then load the examples->H2MDK->sender sketch and upload this onto the Arduino. Check the serial monitor. If you have not connected hydrogen to the shield, then you will get lots of errors about the stack voltage being too low. Ignore those and look for information about the temperature and the data being sent every 5 seconds: 
@@ -158,7 +161,8 @@ sent
        <figure>
          <title>Sender</title>
          <mediaobject>
-           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/remoteSense/sender.jpg"/></imageobject>
+           <imageobject role="fo"><imagedata scalefit="1" width="100%" fileref="pics/fo/remoteSense/sender.jpg"/></imageobject>
+           <imageobject role="html"><imagedata scalefit="1" width="100%" fileref="pics/html/remoteSense/sender.jpg"/></imageobject>
          </mediaobject>
        </figure>
       </para>

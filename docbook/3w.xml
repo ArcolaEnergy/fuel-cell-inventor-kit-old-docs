@@ -59,7 +59,8 @@
        <figure>
          <title>What is included</title>
          <mediaobject>
-           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/3w/included.jpg"/></imageobject>
+           <imageobject role="fo"><imagedata scalefit="1" width="100%" fileref="pics/fo/3w/included.jpg"/></imageobject>
+           <imageobject role="html"><imagedata scalefit="1" width="100%" fileref="pics/html/3w/included.jpg"/></imageobject>
          </mediaobject>
        </figure>
 
@@ -82,7 +83,8 @@
        <figure>
          <title>What is included in the extender module</title>
          <mediaobject>
-           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/3w/expansionmodule.jpg"/></imageobject>
+           <imageobject role="fo"><imagedata scalefit="1" width="100%" fileref="pics/fo/3w/expansionmodule.jpg"/></imageobject>
+           <imageobject role="html"><imagedata scalefit="1" width="100%" fileref="pics/html/3w/expansionmodule.jpg"/></imageobject>
          </mediaobject>
        </figure>
 
@@ -113,7 +115,8 @@
 <figure>
  <title>Hydrogen plumbing</title>
  <mediaobject>
-           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/3w/plumbing.jpg"/></imageobject>
+           <imageobject role="fo"><imagedata scalefit="1" width="100%" fileref="pics/fo/3w/plumbing.jpg"/></imageobject>
+           <imageobject role="html"><imagedata scalefit="1" width="100%" fileref="pics/html/3w/plumbing.jpg"/></imageobject>
  </mediaobject>
 </figure>
 
@@ -139,7 +142,8 @@ Please check that the red and black wires are soldered to the correct terminals 
 <figure>
  <title>Solder wires to fuel cell</title>
  <mediaobject>
-           <imageobject><imagedata scalefit="1" width="60%" fileref="pics/3w/wiringfuelcellsingle.jpg"/></imageobject>
+           <imageobject role="fo"><imagedata scalefit="1" width="60%" fileref="pics/fo/3w/wiringfuelcellsingle.jpg"/></imageobject>
+           <imageobject role="html"><imagedata scalefit="1" width="60%" fileref="pics/html/3w/wiringfuelcellsingle.jpg"/></imageobject>
  </mediaobject>
 </figure>
 
@@ -157,7 +161,8 @@ Please check that the red and black wires are soldered to the correct terminals 
 <figure>
  <title>Electrical connections</title>
  <mediaobject>
-           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/3w/wiring.jpg"/></imageobject>
+           <imageobject role="fo"><imagedata scalefit="1" width="100%" fileref="pics/fo/3w/wiring.jpg"/></imageobject>
+           <imageobject role="html"><imagedata scalefit="1" width="100%" fileref="pics/html/3w/wiring.jpg"/></imageobject>
  </mediaobject>
 </figure>
 
@@ -177,7 +182,8 @@ Please check that the red and black wires are soldered to the correct terminals 
        <figure>
          <title>Connect hydroSTIK and load</title>
          <mediaobject>
-           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/3w/fullsetup.jpg"/></imageobject>
+           <imageobject role="fo"><imagedata scalefit="1" width="100%" fileref="pics/fo/3w/fullsetup.jpg"/></imageobject>
+           <imageobject role="html"><imagedata scalefit="1" width="100%" fileref="pics/html/3w/fullsetup.jpg"/></imageobject>
          </mediaobject>
        </figure>
 
@@ -211,7 +217,8 @@ The fuel cell stack requires unobstructed airflow to all vents in order to funct
        <figure>
          <title>Hydrogen Plumbing for 2 stacks</title>
          <mediaobject>
-           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/3w/doubleplumbing.jpg"/></imageobject>
+           <imageobject role="fo"><imagedata scalefit="1" width="100%" fileref="pics/fo/3w/doubleplumbing.jpg"/></imageobject>
+           <imageobject role="html"><imagedata scalefit="1" width="100%" fileref="pics/html/3w/doubleplumbing.jpg"/></imageobject>
          </mediaobject>
        </figure>
 
@@ -237,7 +244,8 @@ Please check that the red and black wires are soldered to the correct terminals 
        <figure>
          <title>Solder wires to 2 stacks</title>
          <mediaobject>
-           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/3w/wiringfuelcelldouble.jpg"/></imageobject>
+           <imageobject role="fo"><imagedata scalefit="1" width="100%" fileref="pics/fo/3w/wiringfuelcelldouble.jpg"/></imageobject>
+           <imageobject role="html"><imagedata scalefit="1" width="100%" fileref="pics/html/3w/wiringfuelcelldouble.jpg"/></imageobject>
          </mediaobject>
        </figure>
 
@@ -264,7 +272,8 @@ Please check that the red and black wires are soldered to the correct terminals 
        <figure>
          <title>1.5W IV curve</title>
          <mediaobject>
-           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/3w/1.5Wivcurve.jpg"/> </imageobject>
+           <imageobject role="fo"><imagedata scalefit="1" width="100%" fileref="pics/fo/3w/1.5Wivcurve.jpg"/> </imageobject>
+           <imageobject role="html"><imagedata scalefit="1" width="100%" fileref="pics/html/3w/1.5Wivcurve.jpg"/> </imageobject>
          </mediaobject>
        </figure>
 
