@@ -1,12 +1,37 @@
 <sect1 id="faq">
 <title>FAQ</title>
 <orderedlist>
-    <listitem>I get less power than I expect, why? Things to check include:
+    <listitem>
+    I get less power than I expect, why? Things to check include:
         <itemizedlist>
             <listitem>getting enough hydrogen, perhaps you need an extra hydrostik</listitem>
             <listitem>the fuelcell may not be getting enough oxygen, check the vents are clear</listitem>
             <listitem>remember the Arduino will draw about 0.25W, so for the lower power systems this can be a sizable percentage of available output power</listitem>
         </itemizedlist>
+    </listitem>
+    <listitem>
+    Is there a way to manually adjust output voltage or current for a given application? No, the 1.5/3W system provides a 5v regulated output. The 12/30W system provides the output given by the stack itself. As more power is drawn voltage will decrease.
+    </listitem>
+    <listitem>
+    What do the voltage and current readings mean? The voltage is the stack voltage. On the 1.5W system this should be around 1.5V. The 3W system will show around 3V. the 12W system will show around 12V and the 30W system will show around 14V. The current is the total current drawn from the stack.
+    </listitem>
+    <listitem>
+    Why is the software readout of current/voltage inaccurate? The voltage readout should be fairly accurate (to about 50mV). The current reading may be out by up to 100mA.Additionaly, the software is doing some filtering on the current measurement which is why it can take some time for the current shown to match what is being measured. 
+    </listitem>
+    <listitem>
+      Where can I find a voltage/current curve for the fuel cell? Check the <link linkend="poweroutput">Power output</link> section of the manual.
+    </listitem>
+    <listitem>
+      What pins does the shield use? See the <link linkend="shieldpins">Shield Pins</link> section of the manual.
+    </listitem>
+    <listitem>
+    What is the software actually doing? The software runs the timing of shorting the stack and purging the stack. These are necessary to keep the stack working. The software also monitors the stack voltage and the total drawn current.
+    </listitem>
+    <listitem>
+    How often do I need to call the poll function? The polling function should be called at least every 100ms, but the timing isn't overly important. 
+    </listitem>
+    <listitem>
+    How do I get started writing my own application? Start with one of the h2mdk examples (that come with the library). Avoid using the pins mentioned above. Ensure that you start the fuelcell with the start() function, and keep the stack working by regularly calling the poll() function.
     </listitem>
 </orderedlist>
 </sect1>

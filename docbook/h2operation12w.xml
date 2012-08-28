@@ -2,8 +2,8 @@
 <title>Operation</title>
 
 <sect2>
-<title>Status LEDS</title>
-<para>There are 3 LEDS:</para>
+<title>Status LEDs</title>
+<para>There are 3 LEDs:</para>
 <itemizedlist>
 <listitem>After reset, the status LED flashes twice in 200ms, and then every 400ms until the capacitors have charged. When the system is operating normally the LED will flash every second</listitem>
 <listitem>the short LED shows when the fuel cell is shorted. This maintains proper temperature and humidity inside the stack</listitem>

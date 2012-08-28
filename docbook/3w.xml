@@ -253,8 +253,25 @@ Please check that the red and black wires are soldered to the correct terminals 
 
 </sect1>
 
-<xi:include href="h2operation3w.xml" />
+<sect1 id="poweroutput">
+<title>Power output &amp; conditioning</title>
 
+<para>The 1.5/3W H2MDK Fuel Cell Shield controls the fuel cell, and regulates the output to 5V. The super capacitors help to keep the voltage constant even when shorting the stack or purging the waste gas from the stack.
+</para>
+
+<para>The plot below show the characteristics of the H1.5 as supplied off-the-shelf by Horizon.</para>
+
+       <figure>
+         <title>1.5W IV curve</title>
+         <mediaobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/3w/1.5Wivcurve.jpg"/> </imageobject>
+         </mediaobject>
+       </figure>
+
+</sect1>
+
+<xi:include href="h2softwaretimings.xml" />
+<xi:include href="h2operation3w.xml" />
 <xi:include href="h2storage.xml" />
 
 <sect1 id="reconditioning">

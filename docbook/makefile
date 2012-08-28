@@ -1,4 +1,4 @@
-XSLTOPTS=-v
+XSLTOPTS=
 
 all: 3w 12-30w
 3w: 3w.html 3w.pdf

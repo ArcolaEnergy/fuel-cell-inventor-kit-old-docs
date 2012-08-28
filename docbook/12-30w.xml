@@ -180,8 +180,7 @@ Care should be taken not to overload the stack. Ensure that the maximum current 
 </sect2>
 
 </sect1>
-
-<sect1 id="Power output and conditioning">
+<sect1 id="poweroutput">
 <title>Power output &amp; conditioning</title>
 
 <para>The 12/30W H2MDK Fuel Cell Shield controls the fuel cell, but does not regulate the output power (unlike the 3W Shield which has inbuilt voltage regulation and smoothing). Thus the voltage you see across the load terminals of the Shield is that of the fuel cell stack. Furthermore, by default the Shield short-circuits the stack periodically to maintain stack condition and in this time the power output will drop to zero (an onboard capacitor maintains power to the Arduino during shorting).</para>
@@ -189,8 +188,6 @@ Care should be taken not to overload the stack. Ensure that the maximum current 
 <para>One of the first projects you will likely undertake is to add power conditioning. Depending on the requirements of your load (e.g. 12V, 24V), you should be able to find an off-the-shelf DC-DC convertor to suit your needs. For advanced users, you can of course build your own, making use of the Pulse Width Modulation output from the Arduino.</para>
 
 <para>The plots below show the characteristics of the H-12, H-20 and H-30 as supplied off-the-shelf by Horizon. Note that the H-20 is the same physical stack as the H-12, but it can deliver more power because the H-12 is supplied without any fuel cell control (short-circuiting and purging). Knowing this you can decide whether to simplify your system and run without short-circuiting at lower power or increase complexity by adding capacitors to smooth the output during short-circuit and therefore achieve higher power.</para>
-
-<para>Find out more about frequency and duration of short-circuiting by studying the <ulink url="http://www.github.com/arcolaenergy.com/">library.</ulink></para>
 
        <figure>
          <title>12W IV curve</title>
@@ -209,6 +206,7 @@ Care should be taken not to overload the stack. Ensure that the maximum current 
 
 </sect1>
 
+<xi:include href="h2softwaretimings.xml" />
 <xi:include href="h2operation12w.xml" />
 <xi:include href="h2storage.xml" />
 <xi:include href="h2supply.xml" />
