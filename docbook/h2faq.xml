@@ -31,7 +31,7 @@
     How often do I need to call the poll function? The polling function should be called at least every 100ms, but the timing isn't overly important. 
     </listitem>
     <listitem>
-    How do I get started writing my own application? Start with one of the h2mdk examples (that come with the library). Avoid using the pins mentioned above. Ensure that you start the fuelcell with the start() function, and keep the stack working by regularly calling the poll() function.
+    How do I get started writing my own application? Start with one of the h2mdk examples (that come with the library). Avoid using the pins mentioned in <link linkend="shieldpins">Shield Pins</link>. Ensure that you start the fuelcell with the start() function, and keep the stack working by regularly calling the poll() function.
     </listitem>
 </orderedlist>
 </sect1>
