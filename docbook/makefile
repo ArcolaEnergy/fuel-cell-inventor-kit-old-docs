@@ -6,12 +6,15 @@ all: 3w 12-30w
 remote: remoteSense.html remoteSense.xml
 charger: batteryCharger.html batteryCharger.xml
 
-%.html: %.xml html.xsl
-	xmllint --xinclude $< > resolved.xml
-	xsltproc $(XSLTOPTS) --xinclude  --output $@ html.xsl resolved.xml
 
-%.fo: %.xml fo.xsl 
-	xsltproc $(XSLTOPTS) --xinclude --output $@ fo.xsl $<
+%.resolved.xml: %.xml
+	xmllint --xinclude $< > $@
+
+%.html: %.resolved.xml html.xsl
+	xsltproc $(XSLTOPTS) --output $@ html.xsl $<
+
+%.fo: %.resolved.xml fo.xsl 
+	xsltproc $(XSLTOPTS) --output $@ fo.xsl $<
 
 #fop can be got from: http://xmlgraphics.apache.org/fop/download.html
 %.pdf: %.fo
