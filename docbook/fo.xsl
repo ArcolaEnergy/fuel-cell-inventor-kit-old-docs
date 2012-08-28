@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
     xmlns:fo="http://www.w3.org/1999/XSL/Format"
     version="1.0">
-<xsl:import href="http://docbook.sourceforge.net/release/xsl/current/fo/docbook.xsl"/>
+  <xsl:import href="/usr/share/xml/docbook/stylesheet/docbook-xsl-ns/fo/docbook.xsl"/>
 
 <xsl:param name="body.font.family">Helvetica</xsl:param>
 <xsl:param name="paper.type">A4</xsl:param>
