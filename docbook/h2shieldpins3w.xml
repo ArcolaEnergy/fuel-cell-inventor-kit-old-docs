@@ -1,34 +1,96 @@
 <sect1 id="shieldpins">
 <title>Shield Pins</title>
 
-<para>This table shows the allocation of the shield's pins. You should avoid using these in your application</para>
-<table frame='all'><title>Timings</title>
-<tgroup cols='5' align='left' colsep='1' rowsep='1'>
+<para>You should avoid using these pins in your application</para>
+
+<table frame='all'><title>Hardware V1.1 pin allocation</title>
+<tgroup cols='2' align='left' colsep='1' rowsep='1'>
 <colspec colname='1'/>
 <colspec colname='2'/>
-<colspec colname='3'/>
-<colspec colname='4'/>
-<colspec colname='5'/>
 <thead>
 <row>
-  <entry>fuelcell</entry>
-  <entry>short circuit interval</entry>
-  <entry>short circuit time</entry>
-  <entry>purge interval</entry>
-  <entry>purge time</entry>
+  <entry>Pin</entry>
+  <entry>Function</entry>
 </row>
 </thead>
 <tbody>
 <row>
-  <entry>b1</entry>
-  <entry>b2</entry>
-  <entry>b3</entry>
-  <entry>b4</entry>
-  <entry>b5</entry>
+  <entry>2</entry>
+  <entry>purge</entry>
+</row>
+<row>
+  <entry>3</entry>
+  <entry>disconnect load</entry>
+</row>
+<row>
+  <entry>4</entry>
+  <entry>short circuit</entry>
+</row>
+<row>
+  <entry>5</entry>
+  <entry>status LED</entry>
+</row>
+<row>
+  <entry>A1</entry>
+  <entry>stack voltage sense</entry>
+</row>
+<row>
+  <entry>A2</entry>
+  <entry>stack current sense</entry>
+</row>
+<row>
+  <entry>A3</entry>
+  <entry>capacitor voltage sense</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<table frame='all'><title>Hardware V1.3 pin allocation</title>
+<tgroup cols='2' align='left' colsep='1' rowsep='1'>
+<colspec colname='1'/>
+<colspec colname='2'/>
+<thead>
+<row>
+  <entry>Pin</entry>
+  <entry>Function</entry>
+</row>
+</thead>
+<tbody>
+<row>
+  <entry>3</entry>
+  <entry>purge</entry>
+</row>
+<row>
+  <entry>4</entry>
+  <entry>disconnect load</entry>
+</row>
+<row>
+  <entry>5</entry>
+  <entry>short circuit</entry>
+</row>
+<row>
+  <entry>6</entry>
+  <entry>status LED</entry>
+</row>
+<row>
+  <entry>A1</entry>
+  <entry>stack voltage sense</entry>
+</row>
+<row>
+  <entry>A2</entry>
+  <entry>stack current sense</entry>
+</row>
+<row>
+  <entry>A3</entry>
+  <entry>capacitor voltage sense</entry>
+</row>
+<row>
+  <entry>AREF</entry>
+  <entry>connected to Arduino's 3.3v pin</entry>
 </row>
 </tbody>
 </tgroup>
 </table>
 
 </sect1>
-
