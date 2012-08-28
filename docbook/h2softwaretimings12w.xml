@@ -1,0 +1,39 @@
+<sect1 id="software timings">
+<title>Software Timings</title>
+
+<table frame='all'><title>Timings</title>
+<tgroup cols='5' align='left' colsep='1' rowsep='1'>
+<colspec colname='1'/>
+<colspec colname='2'/>
+<colspec colname='3'/>
+<colspec colname='4'/>
+<colspec colname='5'/>
+<thead>
+<row>
+  <entry>fuelcell</entry>
+  <entry>short circuit interval</entry>
+  <entry>short circuit time</entry>
+  <entry>purge interval</entry>
+  <entry>purge time</entry>
+</row>
+</thead>
+<tbody>
+<row>
+  <entry>12W</entry>
+  <entry>10s</entry>
+  <entry>100ms</entry>
+  <entry>25s</entry>
+  <entry>100ms</entry>
+</row>
+<row>
+  <entry>30W</entry>
+  <entry>10s</entry>
+  <entry>100ms</entry>
+  <entry>10s</entry>
+  <entry>100ms</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+</sect1>
