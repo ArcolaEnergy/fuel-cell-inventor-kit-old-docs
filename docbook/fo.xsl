@@ -21,7 +21,7 @@
     <fo:block>
     <xsl:choose>
         <xsl:when test="$position = 'center'">  
-          <fo:external-graphic content-height="2.0cm" src="pics/smallheader.jpg"/>
+          <fo:external-graphic content-height="2.0cm" src="pics/fo/smallheader.jpg"/>
         </xsl:when>
         <!--<xsl:when test="$sequence = 'first' and $position = 'center'"> 
         </xsl:when>-->
