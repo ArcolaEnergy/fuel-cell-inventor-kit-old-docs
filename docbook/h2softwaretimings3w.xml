@@ -19,11 +19,18 @@
 </thead>
 <tbody>
 <row>
-  <entry>b1</entry>
-  <entry>b2</entry>
-  <entry>b3</entry>
-  <entry>b4</entry>
-  <entry>b5</entry>
+  <entry>1.5W</entry>
+  <entry>10s</entry>
+  <entry>100ms</entry>
+  <entry>60s</entry>
+  <entry>100ms</entry>
+</row>
+<row>
+  <entry>3W</entry>
+  <entry>10s</entry>
+  <entry>100ms</entry>
+  <entry>60s</entry>
+  <entry>100ms</entry>
 </row>
 </tbody>
 </tgroup>
