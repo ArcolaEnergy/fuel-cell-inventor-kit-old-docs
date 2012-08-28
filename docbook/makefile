@@ -7,7 +7,8 @@ remote: remoteSense.html remoteSense.xml
 charger: batteryCharger.html batteryCharger.xml
 
 %.html: %.xml html.xsl
-	xsltproc $(XSLTOPTS) --xinclude  --output $@ html.xsl $<
+	xmllint --xinclude $< > resolved.xml
+	xsltproc $(XSLTOPTS) --xinclude  --output $@ html.xsl resolved.xml
 
 %.fo: %.xml fo.xsl 
 	xsltproc $(XSLTOPTS) --xinclude --output $@ fo.xsl $<
