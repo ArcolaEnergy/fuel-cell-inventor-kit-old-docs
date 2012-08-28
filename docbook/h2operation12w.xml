@@ -1,10 +1,11 @@
 <sect1 id="operation">
 <title>Operation</title>
 
+<sect2>
 <title>Status LEDS</title>
 <para>There are 3 LEDS:</para>
 <itemizedlist>
-<listitem>the status LED flashes every 400ms at start up while the capacitors charge. When the system is operating normally the LED will flash every second</listitem>
+<listitem>After reset, the status LED flashes twice in 200ms, and then every 400ms until the capacitors have charged. When the system is operating normally the LED will flash every second</listitem>
 <listitem>the short LED shows when the fuel cell is shorted. This maintains proper temperature and humidity inside the stack</listitem>
 <listitem>the purge LED shows when the purge valve operates</listitem>
 </itemizedlist>
@@ -24,7 +25,7 @@
 <sect2>
 <title>Overload protection</title>
 <para>
-The Stack Control Shield is fitted with a re-settable fuse. If you overload (or short circuit) the output, then the fuse will trip. To reset it, disconnect the load and stop the hydrogen supply by closing the supply clip. Wait for 10 seconds to allow the fuse to cool down before reopening the hydrogen supply.
+The Stack Control Shield is fitted with a replacable fuse. If you overload (or short circuit) the output, the fuse will blow. Replacement fuses are made by littelfuse and are part number 0454 003. The fuse datasheet can be found <ulink url="http://www.farnell.com/datasheets/88932.pdf">here</ulink>
 </para>
 </sect2>
 

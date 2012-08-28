@@ -16,6 +16,11 @@
         <date>16 April 2012</date>
         <revremark>First draft</revremark>
      </revision>
+     <revision>
+        <revnumber>0.6</revnumber>
+        <date>24 August 2012</date>
+        <revremark>Changes made for hardware revisions</revremark>
+     </revision>
   </revhistory>
   <publisher><publishername>Arcola Energy</publishername></publisher>
   </articleinfo>
@@ -273,6 +278,7 @@ Please check that the red and black wires are soldered to the correct terminals 
 </sect1>
 <xi:include href="h2supply.xml" />
 <xi:include href="h2safety.xml" />
+<xi:include href="h2faq.xml" />
 <xi:include href="h2support.xml" />
 <xi:include href="h2license.xml" />
 
