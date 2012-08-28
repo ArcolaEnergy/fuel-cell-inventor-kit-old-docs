@@ -270,7 +270,8 @@ Please check that the red and black wires are soldered to the correct terminals 
 
 </sect1>
 
-<xi:include href="h2softwaretimings.xml" />
+<xi:include href="h2shieldpins3w.xml" />
+<xi:include href="h2softwaretimings3w.xml" />
 <xi:include href="h2operation3w.xml" />
 <xi:include href="h2storage.xml" />
 

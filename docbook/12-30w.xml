@@ -206,7 +206,8 @@ Care should be taken not to overload the stack. Ensure that the maximum current 
 
 </sect1>
 
-<xi:include href="h2softwaretimings.xml" />
+<xi:include href="h2shieldpins12w.xml" />
+<xi:include href="h2softwaretimings12w.xml" />
 <xi:include href="h2operation12w.xml" />
 <xi:include href="h2storage.xml" />
 <xi:include href="h2supply.xml" />
