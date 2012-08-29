@@ -1,7 +1,7 @@
 <sect1 id="operation">
 <title>Operation</title>
 
-<sect2>
+<sect2 id="statusleds">
 <title>Status LEDs</title>
 <para>There are 3 LEDs:</para>
 <itemizedlist>

@@ -1,8 +1,8 @@
 XSLTOPTS=
 
 all: 3w 12-30w
-3w: 3w.html 3w.pdf
-12-30w: 12-30w.html 12-30w.pdf
+3w: 3w.html 3w.pdf 3w.resolved.xml
+12-30w: 12-30w.html 12-30w.pdf 12-30w.resolved.xml
 remote: remoteSense.html remoteSense.xml
 charger: batteryCharger.html batteryCharger.xml
 
@@ -21,4 +21,4 @@ charger: batteryCharger.html batteryCharger.xml
 	../fop-1.0/fop $< $@
 
 clean:
-	rm -f *pdf *html
+	rm -f *pdf *html *resolved.xml

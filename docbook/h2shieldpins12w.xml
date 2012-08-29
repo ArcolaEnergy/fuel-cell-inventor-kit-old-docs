@@ -1,52 +1,14 @@
-<sect1 id="shieldpins">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ENTITY % entities SYSTEM "entities.xml">
+%entities;
+]>
+<sect2 id="shieldpins">
 <title>Shield Pins</title>
 
 <para>You should avoid using these pins in your application</para>
 
-<table frame='all'><title>Hardware V1.1 pin allocation</title>
-<tgroup cols='2' align='left' colsep='1' rowsep='1'>
-<colspec colname='1'/>
-<colspec colname='2'/>
-<thead>
-<row>
-  <entry>Pin</entry>
-  <entry>Function</entry>
-</row>
-</thead>
-<tbody>
-<row>
-  <entry>2</entry>
-  <entry>purge</entry>
-</row>
-<row>
-  <entry>3</entry>
-  <entry>oscillator output for mosfet charge pump</entry>
-</row>
-<row>
-  <entry>4</entry>
-  <entry>short circuit</entry>
-</row>
-<row>
-  <entry>5</entry>
-  <entry>status LED</entry>
-</row>
-<row>
-  <entry>A1</entry>
-  <entry>stack voltage sense</entry>
-</row>
-<row>
-  <entry>A2</entry>
-  <entry>stack current sense</entry>
-</row>
-<row>
-  <entry>A3</entry>
-  <entry>capacitor voltage sense</entry>
-</row>
-</tbody>
-</tgroup>
-</table>
-
-<table frame='all'><title>Hardware V1.3 pin allocation</title>
+<table frame='all'><title>Hardware &stableHardware12w; pin allocation</title>
 <tgroup cols='2' align='left' colsep='1' rowsep='1'>
 <colspec colname='1'/>
 <colspec colname='2'/>
@@ -89,4 +51,4 @@
 </tgroup>
 </table>
 
-</sect1>
+</sect2>

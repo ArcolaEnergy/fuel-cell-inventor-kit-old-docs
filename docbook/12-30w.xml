@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"[
+<!ENTITY % entities SYSTEM "entities.xml">
+%entities;
+]>
 <article
   xmlns="http://docbook.org/ns/docbook"
   xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -15,13 +18,18 @@
         <date>16 April 2012</date>
         <revremark>First draft</revremark>
      </revision>
+     <revision>
+        <revnumber>0.6</revnumber>
+        <date>29 August 2012</date>
+        <revremark>Changes made for hardware revision &stableHardware12w;</revremark>
+     </revision>
   </revhistory>
   <publisher><publishername>Arcola Energy</publishername></publisher>
   </articleinfo>
 
 
 <sect1 id="overview">
-<title>System Overview</title>
+<title>Document Overview</title>
 
 <para>The H2MDK30 kit enables the user to easily design and build fuel cell systems using a Horizon H-12 or H-30 PEM fuel cell stacks to deliver 12W or 30W respectively.</para>
 
@@ -29,6 +37,8 @@
 </para>
 
 <para>This manual doesn't attempt to replace the manual that comes with the fuel cell stack. Read the fuel cell manual to get an understanding of how to properly treat the stack.</para>
+
+<para>This manual covers shields &stableHardware12w; or above. If you have a shield with a lower version number please contact us directly at <ulink url="mailto:support@arcolaenergy.com">support@arcolaenergy.com</ulink></para>
 
 <para>
 Photographs in this guide show the H-12 stack, but instructions apply equally the H-30 stack.
@@ -40,10 +50,10 @@ Photographs in this guide show the H-12 stack, but instructions apply equally th
 
 <itemizedlist>
 <listitem>Control system for Horizon fuel cell stack</listitem>
-<listitem>Refillable metal hydride hydrogen storage with pressure regulators. </listitem>
+<listitem>Refillable metal hydride hydrogen storage with pressure regulators</listitem>
 <listitem>Complete component kit to build and create your own hydrogen fuel cell power plant</listitem>
 <listitem>Development board "shield" for popular Arduino platform with stack control software</listitem>
-<listitem>Monitoring and data-logging via USB (voltage &amp; current)</listitem>
+<listitem>Monitoring and data-logging via USB (stack voltage &amp; current)</listitem>
 <listitem>Open source hardware and software</listitem>
 <listitem>Unregulated output</listitem>
 <listitem>Expansion option to add LCD (Liquid Crystal Display)</listitem>
@@ -80,7 +90,7 @@ Photographs in this guide show the H-12 stack, but instructions apply equally th
 
 <orderedlist>
 <listitem>H-12 or H-30 fuel cell stack</listitem>
-<listitem>H2MDK Arduino Fuel Cell Shield - all code open source and free to download</listitem>
+<listitem>H2MDK Arduino Fuel Cell Shield</listitem>
 <listitem>HydroSTIK hydrogen storage (1 with H-12, 2 with H-30). Pre-filled where delivery method allows</listitem>
 <listitem>Pressure Regulator (1 with H-12, 2 with H-30)</listitem>
 <listitem>Silicon tubing (30cm)</listitem>
@@ -187,6 +197,8 @@ Care should be taken not to overload the stack. Ensure that the maximum current 
 </sect2>
 
 </sect1>
+<xi:include href="h2operation12w.xml" />
+
 <sect1 id="poweroutput">
 <title>Power output &amp; conditioning</title>
 
@@ -215,9 +227,10 @@ Care should be taken not to overload the stack. Ensure that the maximum current 
 
 </sect1>
 
-<xi:include href="h2shieldpins12w.xml" />
+<xi:include href="h2softwaredescription.xml"/>
 <xi:include href="h2softwaretimings12w.xml" />
-<xi:include href="h2operation12w.xml" />
+<xi:include href="h2shieldpins12w.xml" />
+
 <xi:include href="h2storage.xml" />
 <xi:include href="h2supply.xml" />
 <xi:include href="h2safety.xml" />

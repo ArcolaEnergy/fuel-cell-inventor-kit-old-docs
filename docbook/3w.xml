@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"[
+<!ENTITY % entities SYSTEM "entities.xml">
+%entities;
+]>
 
 <article
   xmlns="http://docbook.org/ns/docbook"
@@ -19,7 +22,7 @@
      <revision>
         <revnumber>0.6</revnumber>
         <date>24 August 2012</date>
-        <revremark>Changes made for hardware revisions</revremark>
+        <revremark>Changes made for hardware revision &stableHardware3w;</revremark>
      </revision>
   </revhistory>
   <publisher><publishername>Arcola Energy</publishername></publisher>
@@ -27,7 +30,7 @@
 
 
 <sect1 id="overview">
-<title>System Overview</title>
+<title>Document Overview</title>
 
 <para>The H2MDK3 kit enables the user to easily design and build fuel cell systems using one or two Horizon 1.5 PEM fuel cell stacks to deliver 1.5W or 3W respectively.</para>
 
@@ -36,13 +39,15 @@
                                                                    
 <para>This manual doesn't attempt to replace the manual that comes with the fuel cell stack. Read the fuel cell manual to get an understanding of how to properly treat the stack.</para>
 
+<para>This manual covers shields &stableHardware3w; or above. If you have a shield with a lower version number please contact us directly at <ulink url="mailto:support@arcolaenergy.com">support@arcolaenergy.com</ulink></para>
+
 </sect1>
 <sect1 id="features">
 <title>Features</title>
 
 <itemizedlist>
 <listitem>Control system for Horizon fuel cell stack</listitem>
-<listitem>Refillable metal hydride hydrogen storage with pressure regulators. </listitem>
+<listitem>Refillable metal hydride hydrogen storage with pressure regulators</listitem>
 <listitem>Complete component kit to build and create your own hydrogen fuel cell power plant</listitem>
 <listitem>Development board "shield" for popular Arduino platform with stack control software</listitem>
 <listitem>Monitoring and data-logging via USB (voltage &amp; current)</listitem>
@@ -66,7 +71,7 @@
 
 <orderedlist>
 <listitem>1.5W stack</listitem>
-<listitem>H2MDK Arduino Fuel Cell Shield - all code open source and free to download</listitem>
+<listitem>H2MDK Arduino Fuel Cell Shield</listitem>
 <listitem>HydroSTIK hydrogen storage. Pre-filled where delivery method allows</listitem>
 <listitem>Pressure Regulator</listitem>
 <listitem>Silicon tubing (30cm)</listitem>
@@ -148,8 +153,8 @@ Please check that the red and black wires are soldered to the correct terminals 
 </figure>
 
 <orderedlist>
-<listitem>Cut the wires into 15cm lengths: 1 x red. 1 x black.</listitem>
-<listitem>Strip approx 5mm of insulation from each end of the loose wires.</listitem>
+<listitem>Cut the wires into 15cm lengths: 1 x red. 1 x black</listitem>
+<listitem>Strip approx 5mm of insulation from each end of the loose wires</listitem>
 <listitem>Orientate the stack so that the nozzle is at the top as you look at the side with the solder tags</listitem>
 <listitem>Solder one red wire to the left hand solder-tag terminal of the fuel cell stack</listitem>
 <listitem>Solder one black wire to the right hand solder-tag terminal of the fuel cell stack</listitem>
@@ -250,8 +255,8 @@ Please check that the red and black wires are soldered to the correct terminals 
        </figure>
 
 <orderedlist>
-<listitem>Cut the wires into two 15cm lengths: 1 x red. 1 x black, and 1 x black 5cm length.</listitem>
-<listitem>Strip approx 5mm of insulation from each end of the loose wires.</listitem>
+<listitem>Cut the wires into two 15cm lengths: 1 x red. 1 x black, and 1 x black 5cm length</listitem>
+<listitem>Strip approx 5mm of insulation from each end of the loose wires</listitem>
 <listitem>Orientate the stacks so that the nozzle is at the top as you look at the side with the solder tags</listitem>
 <listitem>Solder 15cm red wire to the left hand solder-tag terminal of the left hand fuel cell stack</listitem>
 <listitem>Solder 15cm black wire to the right hand solder-tag terminal of the right hand fuel cell stack</listitem>
@@ -260,6 +265,8 @@ Please check that the red and black wires are soldered to the correct terminals 
 </sect2>
 
 </sect1>
+
+<xi:include href="h2operation3w.xml" />
 
 <sect1 id="poweroutput">
 <title>Power output &amp; conditioning</title>
@@ -279,9 +286,10 @@ Please check that the red and black wires are soldered to the correct terminals 
 
 </sect1>
 
+<xi:include href="h2softwaredescription.xml"/>
+<xi:include href="h2softwaretimings3w.xml"/>
 <xi:include href="h2shieldpins3w.xml" />
-<xi:include href="h2softwaretimings3w.xml" />
-<xi:include href="h2operation3w.xml" />
+
 <xi:include href="h2storage.xml" />
 
 <sect1 id="reconditioning">
@@ -289,15 +297,15 @@ Please check that the red and black wires are soldered to the correct terminals 
 <para>If the fuel cell is not used for several days or is not working at the rated power, it can be reconditioned as follows:</para>
 
 <orderedlist>
-<listitem>Remove the purge valve from the stack and disconnect the wires from the Stack Control Shield.</listitem>
+<listitem>Remove the purge valve from the stack and disconnect the wires from the Stack Control Shield</listitem>
 <listitem>Fill the syringe with distilled water and connect the syringe to the hydrogen inlet of the stack using a short length of silicone tubing.</listitem>
-<listitem>Inject distilled water into the stack until it comes out of the fuel cell from the other nozzle.</listitem>
-<listitem>Disconnect the syringe from the silicone tube and connect a Hydrostik using a tube with plastic clip to the hydrogen inlet of the stack.</listitem>
-<listitem>Open the plastic clip to allow hydrogen to flow into the stack. You will see the remaining water from inside the stack flow out of the stack. </listitem>
-<listitem>When no more water comes out (after about 5-10 seconds), the stack has been rehydrated and emptied and is now ready for the short-circuit procedure which reconditions the fuel cell membrane.</listitem>
-<listitem>Take the red and black wires of the stack and hold the exposed ends together, thus short-circuiting the stack for 20 seconds.</listitem>
-<listitem>Then open the short-circuit (stop touching the wires together) and close the hydrogen supply clip on the inlet tube.</listitem>
-<listitem>Your stack is now reconditioned and ready for use.</listitem>
+<listitem>Inject distilled water into the stack until it comes out of the fuel cell from the other nozzle</listitem>
+<listitem>Disconnect the syringe from the silicone tube and connect a Hydrostik using a tube with plastic clip to the hydrogen inlet of the stack</listitem>
+<listitem>Open the plastic clip to allow hydrogen to flow into the stack. You will see the remaining water from inside the stack flow out of the stack</listitem>
+<listitem>When no more water comes out (after about 5-10 seconds), the stack has been rehydrated and emptied and is now ready for the short-circuit procedure which reconditions the fuel cell membrane</listitem>
+<listitem>Take the red and black wires of the stack and hold the exposed ends together, thus short-circuiting the stack for 20 seconds</listitem>
+<listitem>Then open the short-circuit (stop touching the wires together) and close the hydrogen supply clip on the inlet tube</listitem>
+<listitem>Your stack is now reconditioned and ready for use</listitem>
 </orderedlist>
                                                    
 
