@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"[
+<!ENTITY % entities SYSTEM "entities.xml">
+%entities;
+]>
+<sect1 id="software description">
+<title>Software description</title>
+
+<sect2 id="softwaredefines">
+<title>Setup and defines</title>
+
+<itemizedlist>
+<listitem>The <code>_stacksize</code> setting defines the size of the fuel cell stack and can be one of <code>V1_5W, V3W, V12W V30W</code></listitem>
+<listitem>The <code>_shield</code> setting defines the version of the shield. This is printed on the reverse of your shield and currently can be one of <code>V1_0, V1_2, V1_3</code></listitem>
+</itemizedlist>
+
+</sect2>
+
+<sect2 id="availablefunctions">
+<title>Available Functions</title>
+
+<itemizedlist>
+<listitem><code>void poll()</code> This function must be called at least every 100ms to keep the stack running. It takes care of the timings of the shorting, purging and measurement of the stack.</listitem>
+<listitem><code>void status()</code> prints a short voltage and current measurement to the hardware serial port</listitem>
+<listitem><code>float getVoltage()</code>returns the stack voltage as a floating point number</listitem>
+<listitem><code>float getCurrent()</code>returns the stack current as a floating point number</listitem>
+<listitem><code>void start()</code>configures the code and blocks until the capacitors are charged</listitem>
+<listitem><code>void overrideTimings( unsigned int shortCircuitInterval, unsigned int shortTime, unsigned long purgeInterval, unsigned in purgeTime)</code>This can be used to change the timings of the stack shorting and purging. All values should be in milliseconds</listitem>
+</itemizedlist>
+
+</sect2>
+
+
+</sect1>
