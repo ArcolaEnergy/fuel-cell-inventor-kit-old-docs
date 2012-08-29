@@ -1,0 +1,149 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>H2MDK 30W Example</title><link rel="stylesheet" href="gtb_docbook.css" type="text/css"><meta name="generator" content="DocBook XSL-NS Stylesheets V1.75.2"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article" title="H2MDK 30W Example"><div class="titlepage"><div><div><h2 class="title"><a name="id2619076"></a>H2MDK 30W Example</h2></div><div><h3 class="subtitle"><i>Lead acid battery charger</i></h3></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#overview">Project overview</a></span></dt><dt><span class="sect1"><a href="#what%20hardware%20you%20need">Hardware requirements</a></span></dt><dd><dl><dt><span class="sect2"><a href="#DC/DC%20converter">DC/DC converter</a></span></dt></dl></dd><dt><span class="sect1"><a href="#theory">Battery charging theory</a></span></dt><dt><span class="sect1"><a href="#what%20software%20you%20need">Software requirements</a></span></dt><dt><span class="sect1"><a href="#software%20preparation">Software preparation</a></span></dt><dd><dl><dt><span class="sect2"><a href="#H2MDK%20library">H2MDK library</a></span></dt></dl></dd><dt><span class="sect1"><a href="#hardware%20preparation">Hardware preparation</a></span></dt><dd><dl><dt><span class="sect2"><a href="#battery%20charger">Building the circuit</a></span></dt><dt><span class="sect2"><a href="#choosing%20the%20charging%20rate">Building the circuit</a></span></dt></dl></dd><dt><span class="sect1"><a href="#id2628694">Expansion ideas</a></span></dt><dt><span class="sect1"><a href="#id2628723">Resources</a></span></dt></dl></div><div class="sect1" title="Project overview"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="overview"></a>Project overview</h2></div></div></div><p>The aim of this project is to build a hydrogen powered 12V lead acid battery charger. It is based on the <a class="ulink" href="http://www.arduino.cc" target="_top">Arduino</a>, <a class="ulink" href="http://www.arcolaenergy.com/h2mdk" target="_top">H2MDK fuel cell shield</a> and the <a class="ulink" href="http://uk.farnell.com/jsp/search/productdetail.jsp?SKU=1821394" target="_top">XP Power 30W DC/DC converter</a>. We will use a P channel mosfet to regulate the current supplied by the fuel cell to a safe limit. The mosfet will be controlled by a PWM output of the Arduino.
+</p></div><div class="sect1" title="Hardware requirements"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="what%20hardware%20you%20need"></a>Hardware requirements</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">1 Arduino</li><li class="listitem">H2MDK 30W fuel cell inventor kit</li><li class="listitem">30W 15V output DC/DC converter (see below)</li><li class="listitem">Bread board</li><li class="listitem">Wires</li><li class="listitem">P channel mosfet that can handle 3A, for example FQP8P10</li><li class="listitem">NPN transistor, for example 2n3906</li><li class="listitem">resistors: 5k, 80k, 220k</li><li class="listitem">A 12V lead acid battery (capacity up to 7AH)</li><li class="listitem">A 10k or similar potentiometer</li><li class="listitem">A low ohmage power resistor (we used a 4ohm 25W)</li></ul></div><div class="sect2" title="DC/DC converter"><div class="titlepage"><div><div><h3 class="title"><a name="DC/DC%20converter"></a>DC/DC converter</h3></div></div></div><p>
+    The actual DC/DC converter used isn't so important. The features we need are:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">30W</li><li class="listitem">will boost from as low as 9V</li><li class="listitem">output is 15V</li></ul></div><p>
+An example of a suitable DC/DC converter is the <a class="ulink" href="http://uk.farnell.com/jsp/search/productdetail.jsp?SKU=1821394" target="_top">XP Power 30W</a>.
+  </p></div></div><div class="sect1" title="Battery charging theory"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="theory"></a>Battery charging theory</h2></div></div></div><p>Say we have a project that is battery powered, and we want to extend the life of the battery. A fuel cell provides a neat way of doing this. However, if you look at the IV curve below, you can see that we don't get enough voltage under load to charge the battery. We want to provide 14 to 15V. This is why we need the DC/DC converter. The DC/DC efficiently boosts the lower voltage from the stack, high enough to charge the battery.
+       </p><div class="figure"><a name="id2649046"></a><p class="title"><b>Figure 1. 30W IV curve</b></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="100%"><tr><td><img src="pics/html/12-30w/30Wivcurve.jpg" width="100%" alt="30W IV curve"></td></tr></table></div></div></div><p><br class="figure-break">
+</p><p>So we can choose our charging voltage with the DC/DC converter, but how wo we choose our charging current? We have a balancing act; we want to run the fuel cell at maximum efficiency, which means close to its rated capacity, but if we try and draw too much power from the fuel cell, we can damage it.
+</p><p>A solution to this is to control the charging current with a PWM controlled mosfet. If the charging current is too high we can limit it by cutting back on the PWM amount. We can monitor total current drawn with the H2MDK's on board current monitor, and we can monitor voltage with a simple potential divider.
+</p><p>To discover the correct PWM amount, we measure the current while adjusting the PWM with a potentiometer.
+</p></div><div class="sect1" title="Software requirements"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="what%20software%20you%20need"></a>Software requirements</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><a class="ulink" href="http://www.arduino.cc" target="_top">Arduino IDE</a></li><li class="listitem"><a class="ulink" href="http://www.arcolaenergy.com/h2mdk" target="_top">The H2MDK library</a></li></ul></div></div><div class="sect1" title="Software preparation"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="software%20preparation"></a>Software preparation</h2></div></div></div><div class="sect2" title="H2MDK library"><div class="titlepage"><div><div><h3 class="title"><a name="H2MDK%20library"></a>H2MDK library</h3></div></div></div><p>Make sure you've got the <a class="ulink" href="www.arcolaenergy.com/h2mdk" target="_top">latest version of the H2MDK Arduino library</a> installed by downloading and unzipping into your sketchbook/libraries folder.
+    </p><p>
+    Start the Arduino IDE and have a look at the file-&gt;examples-&gt;H2MDK-&gt;batteryCharger sketch
+    </p></div></div><div class="sect1" title="Hardware preparation"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="hardware%20preparation"></a>Hardware preparation</h2></div></div></div><div class="sect2" title="Building the circuit"><div class="titlepage"><div><div><h3 class="title"><a name="battery%20charger"></a>Building the circuit</h3></div></div></div><p>
+      Build the circuit as shown in the diagram below except for now, don't connect the battery. 
+       </p><div class="figure"><a name="id2619313"></a><p class="title"><b>Figure 2. PWM battery charging circuit</b></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="100%"><tr><td><img src="pics/html/batteryCharger/charger_bb.png" width="100%" alt="PWM battery charging circuit"></td></tr></table></div></div></div><p><br class="figure-break">
+      </p></div><div class="sect2" title="Building the circuit"><div class="titlepage"><div><div><h3 class="title"><a name="choosing%20the%20charging%20rate"></a>Building the circuit</h3></div></div></div><p>Now load the examples-&gt;H2MDK-&gt;batteryCharger sketch and upload onto the Arduino. Have a look close to the top of the file and you'll see this line:
+
+        </p><pre class="programlisting">
+#define SETUP
+        </pre><p>
+        which tells the program that to start with we aren't charging a battery we're calibrating the system. Load the program onto the Arduino, and connect the hydrogen. Check the serial monitor. It should show something like this:
+        </p><pre class="programlisting">
+ArcolaEnergy fuel cell controller for 30W
+bandgap mV set to 1100
+Short-circuit: 100ms every 10 s
+Purge: 50ms every 10 s
+waiting for caps to charge
+CHARGED
+8.56V, 0.06A
+charge PWM: 0
+8.59V, 0.06A
+charge PWM: 0
+8.65V, 0.06A
+charge PWM: 0
+8.57V, 0.05A
+8.56V, 0.05A
+charge PWM: 0
+8.61V, 0.05A
+charge PWM: 0
+</pre><p>
+If the charge PWM isn't 0 then adjust the charge knob until it shows 0. Connect the power resistor where the battery will go. We're going to calibrate the PWM charge rate using the resistor as this allows us to simulate a discharged battery. Connect the hydrogen (or use a bench PSU set to 10V current limit 2A). Slowly adjust the charge knob and as the PWM value increases you should see the current drawn from the fuel cell/PSU increase:
+</p><pre class="programlisting">
+10.55V, 0.01A
+charge PWM: 0
+10.57V, 0.02A
+charge PWM: 1
+10.69V, 0.17A
+10.58V, 0.51A
+charge PWM: 17
+10.49V, 0.70A
+charge PWM: 28
+10.55V, 0.80A
+charge PWM: 34
+10.54V, 1.09A
+charge PWM: 47
+10.51V, 1.06A
+charge PWM: 47
+10.12V, 0.82A
+charge PWM: 47
+10.46V, 0.93A
+charge PWM: 47
+10.55V, 1.09A
+charge PWM: 51
+10.57V, 1.07A
+charge PWM: 57
+10.51V, 1.26A
+charge PWM: 65
+10.46V, 1.15A
+charge PWM: 79
+10.52V, 1.29A
+charge PWM: 85
+10.55V, 1.17A
+charge PWM: 107
+10.43V, 1.15A
+charge PWM: 115
+10.42V, 1.08A
+charge PWM: 116
+10.06V, 1.18A
+charge PWM: 116
+10.37V, 1.04A
+charge PWM: 116
+10.39V, 0.94A
+charge PWM: 116
+10.44V, 1.11A
+charge PWM: 123
+10.42V, 1.03A
+charge PWM: 140
+10.43V, 0.97A
+charge PWM: 152
+10.39V, 1.12A
+charge PWM: 159
+10.45V, 1.00A
+charge PWM: 169
+10.39V, 0.95A
+charge PWM: 172
+9.60V, 1.18A
+charge PWM: 173
+9.40V, 1.20A
+charge PWM: 172
+9.34V, 1.29A
+charge PWM: 172
+9.18V, 1.53A
+</pre><p>
+We've increased the PWM value to 172 to set a charge rate of about 1.5A. You can set the charge rate to anything you want, but ensure you're not running more than 3A for the 30W or 1.5A for the 15W. Find this line in the program:
+
+</p><pre class="programlisting">
+const int chargeLimit = 100; 
+</pre><p>
+
+Change the value to what you want your charge rate to be. In our case it's 172:
+
+</p><pre class="programlisting">
+const int chargeLimit = 172; 
+</pre><p>
+
+Then change this line
+
+</p><pre class="programlisting">
+#define SETUP
+</pre><p>
+
+to:
+
+</p><pre class="programlisting">
+//#define SETUP
+</pre><p>
+
+Which means the program will run in battery charging mode. Have a look at the values at the top of the file:
+
+</p><pre class="programlisting">
+const int batteryStartChargeV = 11500; //mv
+const int batteryEndChargeV = 14500; //mv
+long maxChargeTime = 600000; //10 minutes expressed in ms
+</pre><p>
+
+      </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><code class="varname">batteryStartChargeV</code> is the voltage (expressed in mv) when we start charging the battery,</li><li class="listitem"><code class="varname">batteryEndChargeV</code> is the voltage (expressed in mv) when we regard the battery as charged,</li><li class="listitem"><code class="varname">maxChargeTime</code> is the time (expressed in ms) when we give up charging the battery.</li></ul></div><p>
+      </p><p>Now disconnect the load resistor and insert the battery. We recommend using a 3A quick blow fuse in series with the positive terminal. Recompile and load the program onto the Arduino, and you should see this in the serial monitor:
+      </p><pre class="programlisting">
+charging
+battery voltage: 10464.90
+10.45V, 0.95A
+10.46V, 0.86A
+charging
+battery voltage: 10061.12
+10.48V, 0.98A
+</pre><p>
+      Depending on what state your battery is in and what the values of the above variables are, the program will either be waiting to charge the battery, or be charging the battery.
+      </p><p>This concludes the project, and shows the H2MDK working to charge a battery as and when required.</p></div></div><div class="sect1" title="Expansion ideas"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2628694"></a>Expansion ideas</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">Add an LCD,</li><li class="listitem">Use a more sophisticated charging method (for example a <a class="ulink" href="http://www.arduino.cc/playground/Code/PIDLibrary" target="_top">PID controller</a>)</li><li class="listitem">Combine with the remote sensor project to provide a warning when the battery is getting low,</li></ul></div></div><div class="sect1" title="Resources"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2628723"></a>Resources</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"></ul></div></div></div></body></html>
