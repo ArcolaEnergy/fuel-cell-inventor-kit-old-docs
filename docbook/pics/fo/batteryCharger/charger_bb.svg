@@ -17,7 +17,7 @@
    viewBox="0 0 515.737 369.573"
    id="svg2"
    inkscape:version="0.47 r22583"
-   sodipodi:docname="charger_bb.png"
+   sodipodi:docname="charger_bb.svg"
    inkscape:export-filename="/home/mattvenn/Desktop/charger_bb.png"
    inkscape:export-xdpi="121.50776"
    inkscape:export-ydpi="121.50776">
@@ -29,7 +29,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -60,14 +60,14 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1440"
-     inkscape:window-height="825"
+     inkscape:window-height="828"
      id="namedview4031"
      showgrid="false"
-     inkscape:zoom="1.2057187"
-     inkscape:cx="387.79849"
-     inkscape:cy="230.98258"
+     inkscape:zoom="1.2585504"
+     inkscape:cx="370.34688"
+     inkscape:cy="229.23198"
      inkscape:window-x="0"
-     inkscape:window-y="24"
+     inkscape:window-y="25"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <g
@@ -13472,41 +13472,33 @@
      x2="249.341"
      id="line3909" />
   <line
-     stroke="#1b5bb3"
-     stroke-linecap="round"
-     y1="4.62136"
-     x1="270.804"
+     y1="4.6213598"
+     x1="242.00388"
      y2="19.8211"
-     stroke-width="3.2"
-     x2="270.938"
-     id="line3911" />
+     x2="242.13788"
+     id="line3911"
+     style="stroke:#1b5bb3;stroke-width:3.20000005;stroke-linecap:round" />
   <line
-     stroke="#418dd9"
-     stroke-linecap="round"
-     y1="4.62136"
-     x1="270.804"
+     y1="4.6213598"
+     x1="242.00388"
      y2="19.8211"
-     stroke-width="1.6"
-     x2="270.938"
-     id="line3913" />
+     x2="242.13788"
+     id="line3913"
+     style="stroke:#418dd9;stroke-width:1.60000002;stroke-linecap:round" />
   <line
-     stroke="#1b5bb3"
-     stroke-linecap="round"
-     y1="4.62136"
-     x1="364.671"
-     y2="4.62136"
-     stroke-width="3.2"
-     x2="270.804"
-     id="line3915" />
+     y1="4.6213598"
+     x1="364.20209"
+     y2="4.6213598"
+     x2="242.82515"
+     id="line3915"
+     style="stroke:#1b5bb3;stroke-width:3.63882828;stroke-linecap:round" />
   <line
-     stroke="#418dd9"
-     stroke-linecap="round"
-     y1="4.62136"
-     x1="364.671"
-     y2="4.62136"
-     stroke-width="1.6"
-     x2="270.804"
-     id="line3917" />
+     y1="4.6213598"
+     x1="364.43192"
+     y2="4.6213598"
+     x2="242.51237"
+     id="line3917"
+     style="stroke:#418dd9;stroke-width:1.82347643;stroke-linecap:round" />
   <line
      stroke="#1b5bb3"
      stroke-linecap="round"
@@ -14063,7 +14055,7 @@
          height="38.15152"
          x="709.12067"
          y="359.12317" /></flowRegion><flowPara
-       id="flowPara6907"></flowPara></flowRoot>  <text
+       id="flowPara6907" /></flowRoot>  <text
      id="text6918"
      y="325.52017"
      x="485.4501"
