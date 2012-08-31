@@ -60,21 +60,10 @@ todo
     <title>JeeLib library</title>
 
     <para>The JeeLib library is a set of utilities for running <ulink url="http://jeelabs.com/products/jeenode">JeeNodes</ulink>, which are small arduino compatible boards with a built in RFM12 radio. The library gives us an easy way to run these radios. We need the new version because it adds support for pin change interrupts. Download the library <ulink url="https://github.com/jcw/jeelib/zipball/master">here</ulink>. Then unzip it in your sketchbook/libraries folder.</para>
-    <para>After you've unzipped the library, we need to make a few changes to the library to allow it to work alongside the H2MDK shield. Open the RF12.cpp file with your favourite editor and on line 18 change this line:
-    <code>// #define PINCHG_IRQ 1</code>
-    to
-    <code>#define PINCHG_IRQ 1</code>
-    Then on line 73 change this line:
-    <code>define RFM_IRQ     2</code>
-    to
-    <code>define RFM_IRQ     7</code>
-    </para>
-    <para>What this does is enable <ulink url="http://arduino.cc/playground/Main/PinChangeInt">pin change interrupts</ulink> because external INT0 and INT1 are already used by the H2MDK shield. Then we set the interrupt pin that the RF12 library expects to use (pin 2, or INT0), to pin 7, which is free for us to use. Restart the Arduino IDE if you've already got it running.
-    </para>
   </sect2>
   <sect2 id="H2MDK library">
     <title>H2MDK library</title>
-    <para>Make sure you've got the <ulink url="www.arcolaenergy.com/h2mdk">latest version of the H2MDK Arduino library</ulink> installed by downloading and unzipping into your sketchbook/libraries folder.
+    <para>Make sure you've got the <ulink url="http://www.arcolaenergy.com/h2mdk">latest version of the H2MDK Arduino library</ulink> installed by downloading and unzipping into your sketchbook/libraries folder.
     </para>
     <para>
     Start the Arduino IDE and have a look at the file->examples->H2MDK->sender and receiver sketches.
@@ -88,13 +77,6 @@ todo
     <sect2 id="rfm12">
       <title>RFM12</title>
       <para>There are quite a few RFM12 radio module options. There are 315MHZ, 433MHz, 868MHz and 915MHz versions. We're using the 433MHz version. The others may work but haven't been tested in this application. Also, there are mounting differences: some with pins, some without. Either way, we need to be able to plug these into a breadboard. So if you feel happy soldering the 2mm pitch pins then solder some wires onto the following pins: GND, INT, SDO, SCK, SEL, SDI and VCC. Alternatively, you can buy an RFM12 on a breakout board from a number of suppliers, including <ulink url="http://jeelabs.com/products/rfm12b-board">JeeLib (includes the RFM12)</ulink> or <ulink url="http://lab.robomotic.com/shop?page=shop.product_details&amp;flypage=flypage-ask.tpl&amp;product_id=17&amp;category_id=1">Robotmotic's breakout board (requires the pinless version of the RFM12)</ulink>. Finally, if you want to make your own breakout board, here are the <ulink url="https://github.com/mattvenn/eagle-circuit-designs/tree/master/hope%20rm12b%20bob">Eagle schematics for a breakout board (requires the pinned version of the RFM12)</ulink>.
-       <figure>
-         <title>RFM12 connections</title>
-         <mediaobject>
-           <imageobject role="fo"><imagedata scalefit="1" width="100%" fileref="pics/fo/remoteSense/rfm12connections.jpg"/></imageobject>
-           <imageobject role="html"><imagedata scalefit="1" width="100%" fileref="pics/html/remoteSense/rfm12connections.jpg"/></imageobject>
-         </mediaobject>
-       </figure>
       </para>
     </sect2>
 
@@ -104,7 +86,7 @@ todo
         <itemizedlist>
           <listitem>GND to GND</listitem>
           <listitem>VCC to 5V</listitem>
-          <listitem>INT to pin 7</listitem>
+          <listitem>INT to pin 2</listitem>
           <listitem>SEL to pin 10</listitem>
           <listitem>SCK to pin 13</listitem>
           <listitem>SDI to pin 11</listitem>
@@ -164,6 +146,9 @@ sent
            <imageobject role="fo"><imagedata scalefit="1" width="100%" fileref="pics/fo/remoteSense/sender.jpg"/></imageobject>
            <imageobject role="html"><imagedata scalefit="1" width="100%" fileref="pics/html/remoteSense/sender.jpg"/></imageobject>
          </mediaobject>
+         <textobject>
+         Note the interrupt line in this case is connected to pin 7. However the hardware has changed and now the interrupt connects to pin 2.
+         </textobject>
        </figure>
       </para>
     </sect2>
